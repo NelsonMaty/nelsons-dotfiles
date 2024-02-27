@@ -1,0 +1,13 @@
+color:
+  when: auto
+  theme: custom
+icons:
+  when: always
+  theme: fancy
+  separator: "  "
+layout: oneline
+size: default
+no-symlink: false
+symlink-arrow: ⇒
+sorting:
+  dir-grouping: first
