@@ -2,6 +2,9 @@
 
 This repository contains all the dotfiles I use on my system.
 
+![image](https://github.com/NelsonMaty/dotfiles/assets/8660231/c41e050d-b045-412d-9d93-589676abfc0d)
+
+
 **Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 ## Contents
