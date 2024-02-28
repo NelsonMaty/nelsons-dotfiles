@@ -19,6 +19,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+alias lta='ls --tree -a'
 
 alias vim='nvim'
 alias cat='bat'
