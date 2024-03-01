@@ -1,4 +1,5 @@
 .config/htop
 .config/configstore
+.config/neofetch 
 .DS_Store
 .config/.DS_Store
