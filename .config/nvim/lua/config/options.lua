@@ -5,4 +5,6 @@
 local opt = vim.opt
 
 opt.mouse = "a" -- Allow mouse click in all modes
+opt.scrolloff = 8 -- Lines of context
+
 vim.diagnostic.disable()
