@@ -2,6 +2,9 @@
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 
+# golang
+export PATH=$HOME/Projects/golang/:$PATH
+
 # inherited bash paths
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
