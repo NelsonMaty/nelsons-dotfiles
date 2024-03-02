@@ -4,5 +4,5 @@
 
 local opt = vim.opt
 
-opt.mouse = ""
+opt.mouse = "a" -- Allow mouse click in all modes
 vim.diagnostic.disable()
