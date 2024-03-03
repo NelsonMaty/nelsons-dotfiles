@@ -59,5 +59,3 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# python
-alias pip="python3 -m pip"
