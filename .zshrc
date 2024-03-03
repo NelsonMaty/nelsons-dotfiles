@@ -25,9 +25,11 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias lta='ls --tree -a'
 
+# enhanced tools
 alias vim='nvim'
 alias cat='bat'
 
+# git
 alias g='git'
 alias gs='git status'
 alias gss='git status --short'
@@ -36,11 +38,13 @@ alias gcd='git checkout'
 alias gcm='git checkout main' 
 alias gclear='git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D'
 
+# tmux
 alias t='tmux'
 alias ta='tmux attach -t'
 alias tk='tmux kill-session -a'
 alias tl='tmux ls'
 alias tn='tmux new-session -s'
+
 # initialize starship
 eval "$(starship init zsh)"
 
@@ -55,3 +59,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
+# python
+alias pip="python3 -m pip"
