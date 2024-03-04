@@ -58,7 +58,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# shell getopt
+# shell gpt utilities
 generate_commit_message() {
   git_diff=$(git diff --staged)
   if [[ -n $git_diff ]]; then
