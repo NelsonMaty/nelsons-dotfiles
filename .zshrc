@@ -71,7 +71,7 @@ generate_commit_message() {
     else
       git commit -m "$sgpt_message"
       echo "👍 Commit done"
-fi
+    fi
   else
     echo "😓 There are no staged changes"
   fi
