@@ -33,7 +33,6 @@ alias cat='bat'
 alias g='git'
 alias gs='git status'
 alias gss='git status --short'
-alias gc='git commit -a -m'
 alias gcd='git checkout'
 alias gcm='git checkout main' 
 alias gclear='git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D'
@@ -59,3 +58,23 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
+# shell getopt
+generate_commit_message() {
+  git_diff=$(git diff --staged)
+  if [[ -n $git_diff ]]; then
+    sgpt_message=$(echo "$git_diff" | sgpt "Generate commit message, for my changes, be clear and informative, in 80 characters or less, start with a verb")
+    echo "- $sgpt_message" 
+    echo "🙂 Is it OK? [Y/n]"
+    read REPLY
+    if [[ $REPLY =~ ^[Nn]$ ]]; then
+      echo "🙅 Operation cancelled"
+    else
+      git commit -m "$sgpt_message"
+      echo "👍 Commit done"
+fi
+  else
+    echo "😓 There are no staged changes"
+  fi
+}
+
+alias gc=generate_commit_message
