@@ -24,6 +24,8 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias lta='ls --tree -a'
+alias lt='ls --tree --ignore-glob "node_modules"'
+alias lta='ls --tree -a --ignore-glob "node_modules"'
 
 # enhanced tools
 alias vim='nvim'
