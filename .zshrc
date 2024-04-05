@@ -22,8 +22,6 @@ alias l='ls -FL'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-alias lt='ls --tree'
-alias lta='ls --tree -a'
 alias lt='ls --tree --ignore-glob "node_modules"'
 alias lta='ls --tree -a --ignore-glob "node_modules"'
 
@@ -33,6 +31,8 @@ alias cat='bat'
 
 # git
 alias g='git'
+alias ga='git add'
+alias gaa='git add .'
 alias gs='git status'
 alias gss='git status --short'
 alias gcd='git checkout'
