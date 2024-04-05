@@ -6,7 +6,8 @@ local keymap = vim.keymap
 local telescope_builtin = require("telescope.builtin")
 local opts = { noremap = true, silent = true }
 
-keymap.set("n", "<leader>fg", telescope_builtin.live_grep, {})
+-- Find globally
+keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "Find symbols in project" })
 
 -- Split windows
 keymap.set("n", "ss", ":split<Return>", opts)
@@ -15,15 +16,15 @@ keymap.set("n", "sv", ":vsplit<Return>", opts)
 -- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
 
--- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
-
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- My custom keymaps
-vim.keymap.set("n", "<leader>cc", "iconsole.log()<esc>", { desc = "Insert console.log()" })
-vim.keymap.set("n", "gb", ":Gitsigns blame_line<CR>", { desc = "Show commit blame for current line" })
-vim.api.nvim_set_keymap("n", "<PageUp>", "20k", { noremap = true })
-vim.api.nvim_set_keymap("n", "<PageDown>", "20j", { noremap = true })
+keymap.set("n", "<leader>cc", "iconsole.log()<esc>", { desc = "Insert console.log()" })
+
+-- Git blame in line
+keymap.set("n", "gb", ":Gitsigns blame_line<CR>", { desc = "Show commit blame for current line" })
+
+-- Improve pg up and down navigation
+vim.api.nvim_set_keymap("n", "<PageUp>", "25k", { noremap = true })
+vim.api.nvim_set_keymap("n", "<PageDown>", "25j", { noremap = true })
