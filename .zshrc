@@ -85,3 +85,8 @@ alias gc=generate_commit_message
 if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init --path)"; fi
 alias py=python3
 alias pip=pip3
+
+# autocomplete for docker
+fpath=(~/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
