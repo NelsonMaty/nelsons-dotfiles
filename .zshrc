@@ -86,7 +86,8 @@ if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init --path)"; fi
 alias py=python3
 alias pip=pip3
 
-# autocomplete for docker
+# enhanced autocompletion
 fpath=(~/.docker/completions $fpath)
+fpath=(/path/to/zsh-completions $fpath)
 autoload -Uz compinit
 compinit
