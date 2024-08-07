@@ -39,7 +39,7 @@ alias gcd='git checkout'
 alias gcm='git checkout main' 
 alias gclear='git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D'
 alias gp='git pull --rebase'
-alias gP='git push orogin HEAD'
+alias gP='git push origin HEAD'
 
 # tmux
 alias t='tmux'
