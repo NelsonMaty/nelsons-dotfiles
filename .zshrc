@@ -64,7 +64,7 @@ eval "$(zoxide init --cmd cd zsh)"
 generate_commit_message() {
   git_diff=$(git diff --staged)
   if [[ -n $git_diff ]]; then
-    sgpt_message=$(echo "$git_diff" | sgpt "Generate commit message, for my changes, be clear and informative, in 80 characters or less, start with a verb")
+    sgpt_message=$(echo "$git_diff" | sgpt "Generate commit message, for my changes, be clear and informative, in 80 characters or less, use the conventional commits format")
     echo "- $sgpt_message" 
     echo "🙂 Is it OK? [Y/n]"
     read REPLY
@@ -88,6 +88,5 @@ alias pip=pip3
 
 # enhanced autocompletion
 fpath=(~/.docker/completions $fpath)
-fpath=(/path/to/zsh-completions $fpath)
 autoload -Uz compinit
 compinit
