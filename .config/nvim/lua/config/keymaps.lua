@@ -28,3 +28,11 @@ keymap.set("n", "gb", ":Gitsigns blame_line<CR>", { desc = "Show commit blame fo
 -- Improve pg up and down navigation
 vim.api.nvim_set_keymap("n", "<PageUp>", "25k", { noremap = true })
 vim.api.nvim_set_keymap("n", "<PageDown>", "25j", { noremap = true })
+
+vim.keymap.set("n", "<leader>cu", function()
+  vim.lsp.buf.code_action({
+    context = {
+      only = { "source.removeUnused.ts" },
+    },
+  })
+end, { desc = "Remove unused imports" })
