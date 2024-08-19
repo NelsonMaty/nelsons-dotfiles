@@ -19,9 +19,6 @@ keymap.set("n", "x", '"_x')
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
--- My custom keymaps
-keymap.set("n", "<leader>cc", "iconsole.log()<esc>", { desc = "Insert console.log()" })
-
 -- Git blame in line
 keymap.set("n", "gb", ":Gitsigns blame_line<CR>", { desc = "Show commit blame for current line" })
 
