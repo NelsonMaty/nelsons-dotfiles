@@ -26,4 +26,25 @@ return {
 
     -- Status line
     { 'nvim-lualine/lualine.nvim', lazy = false },
+{
+        "nvim-telescope/telescope.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },  -- Required dependency
+        cmd = "Telescope",  -- Load on command
+        config = function()
+            require("telescope").setup({
+                defaults = {
+                    -- Default configuration options
+                },
+                pickers = {
+                    -- Configuration for built-in pickers
+                },
+                extensions = {
+                    -- Load any extensions here
+                },
+            })
+            -- Load any extensions you want to use
+            -- require("telescope").load_extension("your_extension")
+        end,
+    },
 }
+
