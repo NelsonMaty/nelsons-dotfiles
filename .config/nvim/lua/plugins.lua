@@ -68,5 +68,13 @@ return {
             { "<leader>gg", "<cmd>LazyGit<cr>", desc = "Open LazyGit" },
         },
     },
+    -- Oil for managing files
+    {
+    'stevearc/oil.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }, -- Required for file icons
+    config = function()
+	    require('oil').setup({})
+end,
+  },
 }
 
