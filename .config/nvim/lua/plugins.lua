@@ -36,6 +36,16 @@ return {
                     -- Default configuration options
                 },
                 pickers = {
+		    live_grep = {
+			    additional_args = function(opts)
+				    return {'--hidden'}
+			    end
+			},
+			grep_string = {
+			    additional_args = function(opts)
+				    return {'--hidden'}
+			    end
+			},
                     -- Configuration for built-in pickers
 		    find_files = {
 			    hidden = true,
@@ -73,7 +83,11 @@ return {
     'stevearc/oil.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }, -- Required for file icons
     config = function()
-	    require('oil').setup({})
+	    require('oil').setup({
+		    view_options = {
+		      show_hidden = true,
+		    }
+	    })
 end,
   },
 }
