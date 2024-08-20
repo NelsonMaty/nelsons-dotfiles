@@ -46,5 +46,6 @@ return {
             -- require("telescope").load_extension("your_extension")
         end,
     },
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
 }
 
