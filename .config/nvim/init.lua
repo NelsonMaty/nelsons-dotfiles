@@ -19,3 +19,4 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope git_commits<cr>", { desc = "Browse
 keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent files" })
 keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Search for the word under cursor" })
 keymap.set("n", "-", require('oil').open, { desc = "Open parent directory" })
+keymap.set("n", "<leader>q", require('oil').close, { desc = "Close Oil buffer" })

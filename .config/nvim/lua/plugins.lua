@@ -34,6 +34,7 @@ return {
             require("telescope").setup({
                 defaults = {
                     -- Default configuration options
+		    file_ignore_patterns = { "^.git/", "^node_modules/" },
                 },
                 pickers = {
 		    live_grep = {
