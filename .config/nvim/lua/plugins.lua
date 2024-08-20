@@ -37,6 +37,9 @@ return {
                 },
                 pickers = {
                     -- Configuration for built-in pickers
+		    find_files = {
+			    hidden = true,
+		    },
                 },
                 extensions = {
                     -- Load any extensions here
