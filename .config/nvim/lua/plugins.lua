@@ -49,7 +49,9 @@ return {
             -- require("telescope").load_extension("your_extension")
         end,
     },
+    -- Treesitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+    -- LazyGit
     {
         "kdheepak/lazygit.nvim",
         cmd = {
