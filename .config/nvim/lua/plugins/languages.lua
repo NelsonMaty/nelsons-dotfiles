@@ -1,6 +1,5 @@
 return {
-        -- Treesitter
- { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+  -- Treesitter
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
 }
-

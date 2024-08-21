@@ -8,8 +8,8 @@ return {
     require("mason").setup()
 
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls" },  -- Ensure only lua_ls is installed
-      automatic_installation = true,     -- Automatically install missing servers
+      ensure_installed = { "lua_ls" }, -- Ensure only lua_ls is installed
+      automatic_installation = true,   -- Automatically install missing servers
     })
 
     -- Configure the Lua Language Server
@@ -18,7 +18,7 @@ return {
       settings = {
         Lua = {
           diagnostics = {
-            globals = { "vim" },  -- Recognize 'vim' as a global variable
+            globals = { "vim" }, -- Recognize 'vim' as a global variable
           },
         },
       },
