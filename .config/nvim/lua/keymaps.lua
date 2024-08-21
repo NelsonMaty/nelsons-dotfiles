@@ -21,3 +21,9 @@ keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Code actions" }
 keymap.set('n', 'cr', vim.lsp.buf.rename, { desc = "Rename variable" })
 keymap.set('n', 'f', vim.lsp.buf.format, { desc = "Format" })
 keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Pop documentation" })
+
+-- Startify session management
+keymap.set('n', '<Leader>ss', ':SSave<CR>', { desc="Save current session", noremap = true, silent = true })
+keymap.set('n', '<Leader>sl', ':SLoad<CR>', { desc="Load a session", noremap = true, silent = true })
+keymap.set('n', '<Leader>sc', ':SClose<CR>', { desc="Close current session", noremap = true, silent = true })
+keymap.set('n', '<Leader>sd', ':SClose<CR>', { desc="Delete a session", noremap = true, silent = true })
