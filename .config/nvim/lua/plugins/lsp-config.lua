@@ -8,8 +8,8 @@ return {
     require("mason").setup()
 
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls" }, -- Ensure only lua_ls is installed
-      automatic_installation = true,   -- Automatically install missing servers
+      ensure_installed = { "lua_ls", "tsserver" }, -- Ensure only lua_ls is installed
+      automatic_installation = true,              -- Automatically install missing servers
     })
 
     -- Configure the Lua Language Server
@@ -23,5 +23,6 @@ return {
         },
       },
     })
+    lspconfig.tsserver.setup({})
   end,
 }

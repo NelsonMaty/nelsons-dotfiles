@@ -17,6 +17,7 @@ keymap.set("n", "<leader>q", require('oil').close, { desc = "Close Oil buffer" }
 keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to definition" })
 keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to implementation" })
 keymap.set('n', 'gr', vim.lsp.buf.references, { desc = "Go to references" })
+keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Code actions" })
 keymap.set('n', 'cr', vim.lsp.buf.rename, { desc = "Rename variable" })
 keymap.set('n', 'f', vim.lsp.buf.format, { desc = "Format" })
 keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Pop documentation" })
