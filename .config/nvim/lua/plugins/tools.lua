@@ -1,6 +1,14 @@
 return {
 -- Status line
-    { 'nvim-lualine/lualine.nvim', lazy = false },
+    { 'nvim-lualine/lualine.nvim', lazy = false,
+    config = function ()
+      require('lualine').setup({
+        options = {
+      theme = 'dracula'
+    }
+    })
+    end
+  },
 {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },  -- Required dependency
