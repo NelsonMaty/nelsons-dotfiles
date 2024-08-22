@@ -4,7 +4,11 @@ return {
   event = "LazyFile",
   opts = {
     -- symbol = "▏",
-    symbol = "|",
+    -- symbol = "|",
+    symbol = "╎",
+    draw = {
+      delay = 150,
+    },
     options = { try_as_border = true },
   },
   init = function()
