@@ -14,7 +14,7 @@ return {
         "%=", --[[ add your center compoentnts here in place of this comment ]]
       },
       lualine_x = {},
-      lualine_y = { "filetype" },
+      lualine_y = {},
       lualine_z = {
         { "location" },
       },
