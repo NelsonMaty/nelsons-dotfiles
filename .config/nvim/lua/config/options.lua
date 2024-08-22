@@ -3,5 +3,4 @@
 -- Add any additional options here
 
 vim.opt.mouse = ""
--- vim.wo.number = false
 vim.wo.relativenumber = false
