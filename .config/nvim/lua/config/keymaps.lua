@@ -24,3 +24,7 @@ keymap.set("n", "gb", ":Gitsigns blame_line<CR>", { desc = "Show commit blame fo
 -- Improve pg up and down navigation
 vim.api.nvim_set_keymap("n", "<PageUp>", "25k", { noremap = true })
 vim.api.nvim_set_keymap("n", "<PageDown>", "25j", { noremap = true })
+
+-- Oil
+keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+keymap.set("n", "<leader>e", require("oil").close, { desc = "Close Oil buffer" })
