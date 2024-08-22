@@ -5,9 +5,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Find globally
--- keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "Find symbols in project" })
-
 -- Split windows
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
@@ -28,3 +25,6 @@ vim.api.nvim_set_keymap("n", "<PageDown>", "25j", { noremap = true })
 -- Oil
 keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 keymap.set("n", "<leader>e", require("oil").close, { desc = "Close Oil buffer" })
+
+-- Telescope
+keymap.set("n", "<leader>fn", ":Telescope notify<CR>", { desc = "List recent notifications" })
