@@ -40,3 +40,6 @@ keymap.set("n", "<C-S-h>", "<C-w><")
 keymap.set("n", "<C-S-l>", "<C-w>>")
 keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
+
+-- Refactoring
+keymap.set("v", "<leader>r", ":Refactor extract", { noremap = true })
