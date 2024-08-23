@@ -31,3 +31,6 @@ keymap.set("n", "<leader>e", require("oil").close, { desc = "Close Oil buffer" }
 
 -- Telescope
 keymap.set("n", "<leader>fn", ":Telescope notify<CR>", { desc = "List recent notifications" })
+
+-- Undo tree
+keymap.set("n", "<leader>uu", require("undotree").toggle, { desc = "Toggle undotree" })
