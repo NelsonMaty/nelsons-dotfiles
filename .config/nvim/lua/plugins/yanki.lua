@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 return {
   "gbprod/yanky.nvim",
   desc = "Better Yank/Paste",
