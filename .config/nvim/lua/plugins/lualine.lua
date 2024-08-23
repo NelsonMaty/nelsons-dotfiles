@@ -7,6 +7,9 @@ return {
   event = "VeryLazy",
   opts = {
     component_separators = "",
+    options = {
+      globalstatus = false, -- Enable global status line
+    },
     sections = {
       lualine_a = {},
       lualine_b = { { "filename", path = 1 } },
