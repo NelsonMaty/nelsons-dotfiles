@@ -8,16 +8,14 @@ return {
   opts = {
     component_separators = "",
     sections = {
-      lualine_a = { { "mode" } },
-      lualine_b = { "filename" },
+      lualine_a = {},
+      lualine_b = { { "filename", path = 1 } },
       lualine_c = {
         "%=", --[[ add your center compoentnts here in place of this comment ]]
       },
-      lualine_x = {},
+      lualine_x = { "diagnostics" },
       lualine_y = {},
-      lualine_z = {
-        { "location" },
-      },
+      lualine_z = {},
     },
     inactive_sections = {
       lualine_a = { "filename" },
@@ -25,7 +23,7 @@ return {
       lualine_c = {},
       lualine_x = {},
       lualine_y = {},
-      lualine_z = { "location" },
+      lualine_z = {},
     },
     tabline = {},
     extensions = {},
