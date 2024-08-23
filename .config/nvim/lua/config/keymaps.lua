@@ -42,4 +42,6 @@ keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
 
 -- Refactoring
-keymap.set("v", "<leader>r", ":Refactor extract", { noremap = true })
+vim.keymap.set({ "n", "x" }, "<leader>r", function()
+  require("refactoring").select_refactor()
+end)
