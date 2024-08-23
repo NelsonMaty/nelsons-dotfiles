@@ -34,3 +34,9 @@ keymap.set("n", "<leader>fn", ":Telescope notify<CR>", { desc = "List recent not
 
 -- Undo tree
 keymap.set("n", "<leader>uu", require("undotree").toggle, { desc = "Toggle undotree" })
+
+-- Resize window
+keymap.set("n", "<C-S-h>", "<C-w><")
+keymap.set("n", "<C-S-l>", "<C-w>>")
+keymap.set("n", "<C-S-k>", "<C-w>+")
+keymap.set("n", "<C-S-j>", "<C-w>-")
