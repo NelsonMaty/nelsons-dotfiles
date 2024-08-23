@@ -4,3 +4,4 @@
 
 vim.opt.mouse = ""
 vim.wo.relativenumber = false
+vim.diagnostic.enable(false)
