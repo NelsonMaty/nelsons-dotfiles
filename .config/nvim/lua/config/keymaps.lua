@@ -5,6 +5,9 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+local utils = require("utils.discipline")
+utils.cowboy()
+
 -- Split windows
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
