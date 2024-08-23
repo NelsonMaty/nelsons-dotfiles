@@ -1,18 +1,18 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "dockerfile", "json5" } },
+    opts = { ensure_installed = { "json5" } },
   },
   {
-    "mason.nvim",
-    opts = { ensure_installed = { "hadolint" } },
+    "b0o/SchemaStore.nvim",
+    lazy = true,
+    version = false, -- last release is way too old
   },
   {
     "neovim/nvim-lspconfig",
     opts = {
+      -- make sure mason installs the server
       servers = {
-        dockerls = {},
-        docker_compose_language_service = {},
         jsonls = {
           -- lazy-load schemastore when needed
           on_new_config = function(new_config)
@@ -30,10 +30,5 @@ return {
         },
       },
     },
-  },
-  {
-    "b0o/SchemaStore.nvim",
-    lazy = true,
-    version = false, -- last release is way too old
   },
 }
