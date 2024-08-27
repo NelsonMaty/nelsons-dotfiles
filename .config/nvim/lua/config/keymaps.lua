@@ -5,6 +5,7 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- Prevent me from overusing hkjl for moving
 local utils = require("utils.discipline")
 utils.cowboy()
 
@@ -45,3 +46,11 @@ keymap.set("n", "<C-S-j>", "<C-w>-")
 vim.keymap.set({ "n", "x" }, "<leader>r", function()
   require("refactoring").select_refactor()
 end)
+
+-- Key mapping to close all buffers and leave one window open
+vim.keymap.set(
+  "n",
+  "<leader>bD",
+  require("utils.clearance").resetBuffersAndWindows,
+  { silent = true, desc = "Close all buffers and leave one window open" }
+)
