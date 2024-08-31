@@ -28,7 +28,7 @@ alias vim='nvim'
 alias cat='bat'
 
 # git
-alias g='git'
+alias g='lazygit'
 alias ga='git add'
 alias gaa='git add .'
 alias gs='git status'
