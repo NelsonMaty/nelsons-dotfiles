@@ -65,20 +65,33 @@ generate_commit_message() {
   git_diff=$(git diff --staged)
   if [[ -n $git_diff ]]; then
     sgpt_message=$(echo "$git_diff" | sgpt "Generate commit message, for my changes, be clear and informative, in 80 characters or less, use the conventional commits format")
-    echo "- $sgpt_message" 
-    echo "🙂 Is it OK? [Y/n]"
-    read REPLY
-    if [[ $REPLY =~ ^[Nn]$ ]]; then
-      echo "🙅 Operation cancelled"
-    else
-      git commit -m "$sgpt_message"
+
+    # Trim leading/trailing whitespace and remove all newlines
+    sgpt_message=$(echo "$sgpt_message" | tr -s '\n' ' ' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+    # Create a temporary file to hold the commit message
+    commit_msg_file=$(mktemp)
+
+    # Prepend the "-" sign to the trimmed message and write it to the file
+    echo "- $sgpt_message" > "$commit_msg_file"
+
+    # Open the message in Neovim
+    nvim "$commit_msg_file"
+
+    # If Neovim exited successfully and the file is not empty, commit
+    if [[ $? -eq 0 && -s $commit_msg_file ]]; then
+      git commit -F "$commit_msg_file"
       echo "👍 Commit done"
+    else
+      echo "🙅 Operation cancelled or empty commit message"
     fi
+
+    # Clean up the temporary file
+    rm "$commit_msg_file"
   else
     echo "😓 There are no staged changes"
   fi
 }
-
 alias gc=generate_commit_message
 
 # python
