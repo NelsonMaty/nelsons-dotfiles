@@ -81,15 +81,15 @@ generate_commit_message() {
     # If Neovim exited successfully and the file is not empty, commit
     if [[ $? -eq 0 && -s $commit_msg_file ]]; then
       git commit -F "$commit_msg_file"
-      echo "👍 Commit done"
+      echo "👍 Commit done. Otsukare!"
     else
-      echo "🙅 Operation cancelled or empty commit message"
+      echo "🙅 Operation cancelled. Yamete kudasai!"
     fi
 
     # Clean up the temporary file
     rm "$commit_msg_file"
   else
-    echo "😓 There are no staged changes"
+    echo "😓 There are no staged changes. Baka janai no?"
   fi
 }
 alias gc=generate_commit_message
