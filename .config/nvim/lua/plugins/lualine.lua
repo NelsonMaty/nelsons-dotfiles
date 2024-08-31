@@ -1,7 +1,3 @@
--- Bubbles config for lualine
--- Author: lokesh-krishna
--- MIT license, see LICENSE for more details.
-
 local function macro_recording()
   local reg = vim.fn.reg_recording()
   if reg == "" then
