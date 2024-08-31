@@ -54,3 +54,7 @@ vim.keymap.set(
   require("utils.clearance").resetBuffersAndWindows,
   { silent = true, desc = "Close all buffers and leave one window open" }
 )
+
+-- Keymaps for FTerm
+vim.keymap.set("n", "<leader>`", "<CMD>lua require('FTerm').toggle()<CR>")
+vim.keymap.set("t", "<leader>`", "<C-\\><C-n><CMD>lua require('FTerm').toggle()<CR>")
