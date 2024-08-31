@@ -57,4 +57,4 @@ vim.keymap.set(
 
 -- Keymaps for FTerm
 vim.keymap.set("n", "<leader>`", "<CMD>lua require('FTerm').toggle()<CR>")
-vim.keymap.set("t", "<leader>`", "<C-\\><C-n><CMD>lua require('FTerm').toggle()<CR>")
+vim.keymap.set("t", "`", "<C-\\><C-n><CMD>lua require('FTerm').toggle()<CR>")
