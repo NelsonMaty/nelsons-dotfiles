@@ -25,6 +25,8 @@ keymap.set("n", "gb", ":Gitsigns blame_line<CR>", { desc = "Show commit blame fo
 -- Improve pg up and down navigation
 vim.api.nvim_set_keymap("n", "<PageUp>", "25k", { noremap = true })
 vim.api.nvim_set_keymap("n", "<PageDown>", "25j", { noremap = true })
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Oil
 keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
