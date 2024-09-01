@@ -30,7 +30,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Oil
 keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
-keymap.set("n", "<leader>e", require("oil").close, { desc = "Close Oil buffer" })
 
 -- Telescope
 keymap.set("n", "<leader>fn", ":Telescope notify<CR>", { desc = "List recent notifications" })
