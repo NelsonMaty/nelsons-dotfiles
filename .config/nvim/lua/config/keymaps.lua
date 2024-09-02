@@ -59,3 +59,8 @@ vim.keymap.set(
 -- Keymaps for FTerm
 vim.keymap.set("n", "<leader>`", "<CMD>lua require('FTerm').toggle()<CR>")
 vim.keymap.set("t", "`", "<C-\\><C-n><CMD>lua require('FTerm').toggle()<CR>")
+
+-- Keymaps for Obsidian
+keymap.set("n", "<leader>oh", require("utils.obsidian").create_handbook_note, { desc = "Create handbook note" })
+keymap.set("n", "<leader>of", require("utils.obsidian").find_files_in_pandora, { desc = "Find note in pandora" })
+keymap.set("n", "<leader>o/", require("utils.obsidian").live_grep_in_pandora, { desc = "Search word in pandora" })
