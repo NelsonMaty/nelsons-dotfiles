@@ -5,7 +5,7 @@
 vim.diagnostic.enable(false)
 
 vim.opt.mouse = ""
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- Enable the option to require a Prettier config file
 -- If no prettier config file is found, the formatter will not be used
