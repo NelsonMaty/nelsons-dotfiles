@@ -3,7 +3,7 @@
 This repository contains all the dotfiles I use on my system.   
 **Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-![image](https://github.com/user-attachments/assets/a2a560cc-3c63-443d-a9ea-fd908317b4ad)
+![image](https://github.com/user-attachments/assets/c17b5fb7-b9c0-451d-85a1-b01314692958)
 
 This is how my terminal looks like ☝🏻
 
