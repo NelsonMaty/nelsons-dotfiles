@@ -3,7 +3,8 @@
 This repository contains all the dotfiles I use on my system.   
 **Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-![image](https://github.com/NelsonMaty/dotfiles/assets/8660231/5e66e04e-fb03-47d2-8a96-de1a78568c28)
+![image](https://github.com/user-attachments/assets/a2a560cc-3c63-443d-a9ea-fd908317b4ad)
+
 This is how my terminal looks like ☝🏻
 
 ## Contents
