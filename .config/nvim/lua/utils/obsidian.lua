@@ -14,16 +14,7 @@ function M.create_new_file(folder, extension, prompt)
       filename = filename .. "." .. extension
     end
 
-    -- Check if the filename contains spaces
-    local full_path
-    if filename:find(" ") then
-      -- Surround with single quotes if there are spaces
-      full_path = folder .. "'" .. filename .. "'"
-    else
-      -- No quotes needed if there are no spaces
-      full_path = folder .. filename
-    end
-
+    local full_path = folder .. filename
     vim.cmd("edit " .. full_path)
   end
 end
