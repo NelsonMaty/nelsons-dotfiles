@@ -73,7 +73,7 @@ generate_commit_message() {
     commit_msg_file=$(mktemp)
 
     # Prepend the "-" sign to the trimmed message and write it to the file
-    echo "- $sgpt_message" > "$commit_msg_file"
+    echo "$sgpt_message" > "$commit_msg_file"
 
     # Open the message in Neovim
     nvim "$commit_msg_file"
