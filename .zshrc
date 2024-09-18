@@ -112,4 +112,4 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # api keys
-[ -f ~/.api_keys ] && source ~/.api_keys
+[ -f ~/dotfiles/.api_keys ] && source ~/dotfiles/.api_keys
