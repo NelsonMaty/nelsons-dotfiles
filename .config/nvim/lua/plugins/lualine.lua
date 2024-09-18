@@ -16,7 +16,7 @@ return {
     },
     sections = {
       lualine_a = {},
-      lualine_b = { { "filename", color = { bg = "#f1fa8c", fg = "#000000" } } },
+      lualine_b = { { "filename", path = 1, color = { bg = "#f1fa8c", fg = "#000000" } } },
       lualine_c = {
         "%=", --[[ add your center compoentnts here in place of this comment ]]
       },
