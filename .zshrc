@@ -110,3 +110,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# api keys
+[ -f ~/.api_keys ] && source ~/.api_keys

@@ -4,3 +4,4 @@
 .DS_Store
 .config/.DS_Store
 .config/shell_gpt/.sgptrc
+.api_keys
