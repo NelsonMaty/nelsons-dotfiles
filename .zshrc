@@ -2,6 +2,9 @@
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 
+# cargo
+export PATH=$HOME/.cargo/bin:$PATH
+
 # golang
 export GOPATH=$HOME/Projects/golang
 export PATH=$PATH:$GOPATH/bin
@@ -113,3 +116,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # api keys
 [ -f ~/dotfiles/.api_keys ] && source ~/dotfiles/.api_keys
+
+# This line is automatically inserted by the installer of ask.sh
+eval "$(ask-sh --init)"
