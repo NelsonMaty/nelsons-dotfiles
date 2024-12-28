@@ -2,8 +2,20 @@
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:/usr/local/bin:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 
-# NVM
-[ -s "$HOME/.nvm/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"
+# Initialize zoxide
+eval "$(zoxide init zsh)"
+
+# Lazy-load NVM
+export NVM_AUTO_USE=false
+alias use-node='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use'
+
+# Lazy-load pyenv
+if [ -x "$(command -v pyenv)" ]; then
+    alias pyenv-init="eval \"\$(pyenv init --path); \$(pyenv init -); \$(pyenv virtualenv-init -)\""
+fi
+
+# Starship prompt (asynchronous)
+eval "$(starship init zsh)"
 
 # Aliases
 alias ls='lsd'
@@ -35,43 +47,32 @@ alias tk='tmux kill-session -a'
 alias tl='tmux ls'
 alias tn='tmux new-session -s'
 
-# Initialize tools
-[ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
-[ -x "$(command -v zoxide)" ] && eval "$(zoxide init --cmd cd zsh)"
-[ -x "$(command -v pyenv)" ] && eval "$(pyenv init --path)" && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
-
-# API keys
-[ -f ~/dotfiles/.api_keys ] && source ~/dotfiles/.api_keys
-
-# Python aliases
-if command -v pyenv 1>/dev/null 2>&1; then
-    alias py=python3
-    alias pip=pip3
-fi
-
 # Shell GPT utilities
 generate_commit_message() {
     git_diff=$(git diff --staged)
     if [[ -n $git_diff ]]; then
-        sgpt_message=$(echo "$git_diff" | sgpt "Generate commit message, for my changes, be clear and informative, in 80 characters or less, use the conventional commits format")
+        sgpt_message=$(echo "$git_diff" | sgpt "Generate commit message, be clear and informative, 80 characters max, use conventional commits format")
         sgpt_message=$(echo "$sgpt_message" | tr -s '\n' ' ' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
         commit_msg_file=$(mktemp)
         echo "$sgpt_message" > "$commit_msg_file"
         nvim "$commit_msg_file"
         if [[ $? -eq 0 && -s $commit_msg_file ]]; then
             git commit -F "$commit_msg_file"
-            echo "👍 Commit done. Otsukare!"
+            echo "👍 Commit done."
         else
-            echo "🙅 Operation cancelled. Yamete kudasai!"
+            echo "🙅 Operation cancelled."
         fi
         rm "$commit_msg_file"
     else
-        echo "😓 There are no staged changes. Baka janai no?"
+        echo "😓 No staged changes."
     fi
 }
 alias gc=generate_commit_message
 
-# Conda initialization (lazy load)
+# API keys
+[ -f ~/dotfiles/.api_keys ] && source ~/dotfiles/.api_keys
+
+# Conda initialization (lazy-load with alias)
 if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
     alias conda_init=". /opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
 fi
@@ -81,3 +82,22 @@ alias stablediff='cd ~/Projects/stable-diffusion-webui && conda activate sdxl &&
 
 # Cursor style
 echo -e '\e[2 q'  # Block cursor
+
+nvm_auto_use() {
+    if [ -f ".nvmrc" ]; then
+        use-node
+        nvm use
+    fi
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd nvm_auto_use
+
+pyenv_auto_activate() {
+    if [ -f ".python-version" ]; then
+        pyenv-init
+        pyenv activate $(cat .python-version)
+    fi
+}
+add-zsh-hook chpwd pyenv_auto_activate
+
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
