@@ -3,7 +3,7 @@ export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:/usr/local/bin:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 
 # Initialize zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd bash)"
 # Lazy-load NVM
 export NVM_AUTO_USE=false
 alias use-node='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use'
@@ -99,5 +99,4 @@ pyenv_auto_activate() {
 }
 add-zsh-hook chpwd pyenv_auto_activate
 
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
