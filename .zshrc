@@ -23,19 +23,16 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree --ignore-glob "node_modules"'
-alias lta='ls --tree -a --ignore-glob "node_modules"'
 alias vim='nvim'
 alias cat='bat'
+alias top='vtop'
 
 # Git aliases
 alias g='lazygit'
 alias ga='git add'
-alias gaa='git add .'
 alias gs='git status'
-alias gss='git status --short'
 alias gcd='git checkout'
 alias gcm='git checkout main'
-alias gclear='git fetch --prune && git branch -vv | grep ": gone]" | awk "{print \$1}" | xargs -p git branch -D'
 alias gp='git pull --rebase'
 alias gP='git push origin HEAD'
 
@@ -78,9 +75,6 @@ fi
 
 # Special environment configurations
 alias stablediff='cd ~/Projects/stable-diffusion-webui && conda activate sdxl && PYTORCH_ENABLE_MPS_FALLBACK=1 MPS_ENABLE_DEVICE_SIDE_MEMPOOL=1 ./webui.sh --no-half-vae --use-cpu interrogate --skip-torch-cuda-test --medvram --opt-split-attention --precision full'
-
-# Cursor style
-echo -e '\e[2 q'  # Block cursor
 
 nvm_auto_use() {
     if [ -f ".nvmrc" ]; then
