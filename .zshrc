@@ -40,13 +40,6 @@ alias tn='tmux new-session -s'
 [ -x "$(command -v zoxide)" ] && eval "$(zoxide init --cmd cd zsh)"
 [ -x "$(command -v pyenv)" ] && eval "$(pyenv init --path)" && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
 
-# Enhanced autocompletion
-if [ -d ~/.docker/completions ]; then
-    fpath=(~/.docker/completions $fpath)
-fi
-autoload -Uz compinit
-compinit
-
 # API keys
 [ -f ~/dotfiles/.api_keys ] && source ~/dotfiles/.api_keys
 
