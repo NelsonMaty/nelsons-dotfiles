@@ -1,17 +1,11 @@
 # Paths
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:/usr/local/bin:$PATH
-export PYENV_ROOT="$HOME/.pyenv"
 
 # Initialize zoxide
 eval "$(zoxide init --cmd cd bash)"
 # Lazy-load NVM
 export NVM_AUTO_USE=false
 alias use-node='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use'
-
-# Lazy-load pyenv
-if [ -x "$(command -v pyenv)" ]; then
-    alias pyenv-init="eval \"\$(pyenv init --path); \$(pyenv init -); \$(pyenv virtualenv-init -)\""
-fi
 
 # Starship prompt (asynchronous)
 eval "$(starship init zsh)"
@@ -68,14 +62,6 @@ alias gc=generate_commit_message
 # API keys
 [ -f ~/dotfiles/.api_keys ] && source ~/dotfiles/.api_keys
 
-# Conda initialization (lazy-load with alias)
-if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-    alias conda_init=". /opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-fi
-
-# Special environment configurations
-alias stablediff='cd ~/Projects/stable-diffusion-webui && conda activate sdxl && PYTORCH_ENABLE_MPS_FALLBACK=1 MPS_ENABLE_DEVICE_SIDE_MEMPOOL=1 ./webui.sh --no-half-vae --use-cpu interrogate --skip-torch-cuda-test --medvram --opt-split-attention --precision full'
-
 nvm_auto_use() {
     if [ -f ".nvmrc" ]; then
         use-node
@@ -84,13 +70,5 @@ nvm_auto_use() {
 }
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd nvm_auto_use
-
-pyenv_auto_activate() {
-    if [ -f ".python-version" ]; then
-        pyenv-init
-        pyenv activate $(cat .python-version)
-    fi
-}
-add-zsh-hook chpwd pyenv_auto_activate
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
