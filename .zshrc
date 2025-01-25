@@ -72,3 +72,9 @@ autoload -Uz add-zsh-hook
 add-zsh-hook chpwd nvm_auto_use
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. "$HOME/.cargo/env"
+
+# This line is automatically inserted by the installer of ask.sh
+eval "$(ask-sh --init)"
