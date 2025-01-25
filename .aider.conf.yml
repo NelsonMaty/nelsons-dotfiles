@@ -1,0 +1,3 @@
+# Specify the model to use for the main chat
+model: claude-3.5-sonnet-20241022
+
