@@ -2,7 +2,7 @@
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:/usr/local/bin:$PATH
 
 # Initialize zoxide
-eval "$(zoxide init --cmd cd bash)"
+eval "$(zoxide init --cmd cd zsh)"
 # Lazy-load NVM
 export NVM_AUTO_USE=false
 alias use-node='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use'
