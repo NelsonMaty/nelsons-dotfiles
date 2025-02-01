@@ -1,4 +1,3 @@
-# Specify the model to use for the main chat
-# model: claude-3.5-sonnet-20241022
-model: deepseek/deepseek-reasoner  # Architect model (DeepSeek-R1)
-editor-model: deepseek/deepseek-chat  # Editor model (DeepSeek-Chat-v3)
+architect: true
+model: r1
+editor-model: sonnet
