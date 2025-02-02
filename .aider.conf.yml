@@ -1,3 +1,7 @@
 architect: true
 model: r1
 editor-model: sonnet
+dark-mode: true
+auto-commits: false
+subtree-only: true
+editor: nvim
