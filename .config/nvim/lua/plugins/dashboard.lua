@@ -2,7 +2,7 @@ math.randomseed(os.time()) -- Seed the random number generator
 
 local quotes = {
   -- Vim-specific quotes
-  "\"I don't always use Vim, but when I do, I can't exit it\" - The Most Interesting Developer in the World",
+  "\"I don't always use Vim, but when I do, I can't exit it\"",
   '"In a world of IDEs, be a Neovim" - Ancient Programmer Proverb',
   '"Dear diary, Day 47: Still trying to exit Vim" - Anonymous',
   '":wq your way through life" - Vim Philosophy',
@@ -10,15 +10,12 @@ local quotes = {
   '"Why did the Vim user cross the road? To :q! the other side"',
 
   -- Programming humor with Vim twist
-  '"There are two types of programmers: Those who can exit Vim, and those who can\'t"',
   '"Behind every great programmer is a :previous_command in Vim"',
   '"Keep calm and press ESC"',
   '"In case of fire: 1. git commit 2. git push 3. :wq 4. leave building"',
 
   -- Programmer wisdom with humor
-  '"Code is like a joke: if you have to explain it, it\'s probably bad" - Vim User',
   '"The best editor is the one you can exit from - oh wait..." - Vim Enthusiast',
-  '"Vim is like a good code comment - rare but valuable"',
 
   -- Modal editing jokes
   '"I tried to talk to a girl in normal mode, but she preferred insert mode"',
@@ -26,18 +23,14 @@ local quotes = {
   '"Modal editing: because sometimes you just need to be in the right mode"',
 
   -- Configuration humor
-  '"My Vim config is shorter than my coffee order"',
   '"I would tell you a Neovim joke, but I\'m still configuring it"',
   '"Copy my vimrc? Sure, it\'s only 3,721 lines long!"',
 
   -- Classic programming humor with Vim twist
-  '"There are 10 types of programmers: those who use Vim and those who don\'t"',
-  '"Why do Vim users make good bartenders? They know all the modes"',
   "\"A Vim user walks into a bar. They're still there because they can't figure out how to leave\"",
 
   -- Lua-specific (for Neovim)
   '"Why did the Lua config file feel lonely? It had too many local variables"',
-  "\"What's a Lua developer's favorite drink? Moonshine!\"",
 
   -- Modern Neovim
   "\"VSCode? You mean 'Vim with training wheels'?\"",
