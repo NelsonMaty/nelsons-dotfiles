@@ -11,6 +11,7 @@ alias use-node='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use'
 eval "$(starship init zsh)"
 
 # Aliases
+alias p='pnpm'
 alias ls='lsd'
 alias l='ls -FL'
 alias ll='ls -l'
