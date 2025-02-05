@@ -59,7 +59,7 @@ local quotes = {
 -- local random_quote = quotes[math.random(#quotes)]
 
 local function generate_cowsay(text)
-  -- Wrap text to reasonable width
+  -- Wrap text to 40 characters width
   local wrapped = {}
   for line in text:gmatch("([^\n]+)") do
     while #line > 40 do
@@ -75,29 +75,25 @@ local function generate_cowsay(text)
     wrapped[#wrapped + 1] = line
   end
 
-  -- Get maximum line length
+  -- Build the speech bubble
   local max_len = 0
   for _, line in ipairs(wrapped) do
     max_len = math.max(max_len, #line)
   end
 
-  -- Create simplified speech bubble
-  local bubble = { "/" .. string.rep("-", max_len + 2) .. "\\" }
-
-  -- Add text lines
+  local bubble = { " " .. string.rep("_", max_len + 2) }
   for _, line in ipairs(wrapped) do
-    bubble[#bubble + 1] = "| " .. line .. string.rep(" ", max_len - #line) .. " |"
+    bubble[#bubble + 1] = string.format("| %-" .. max_len .. "s |", line)
   end
+  bubble[#bubble + 1] = " " .. string.rep("-", max_len + 2)
 
-  -- Add bottom of speech bubble
-  bubble[#bubble + 1] = "\\" .. string.rep("-", max_len + 2) .. "/"
-
-  bubble[#bubble + 1] = [[
-
-
-
-
-]]
+  -- Fixed cow ASCII art with proper alignment
+  -- Add each cow line individually with proper escaping
+  bubble[#bubble + 1] = "\\  ^__^"
+  bubble[#bubble + 1] = "         \\ (oo)\\_______"
+  bubble[#bubble + 1] = "               (__)\\       )\\/\\"
+  bubble[#bubble + 1] = "                ||----w |"
+  bubble[#bubble + 1] = "                ||     ||"
 
   return table.concat(bubble, "\n")
 end
