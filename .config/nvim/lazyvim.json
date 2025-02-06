@@ -2,7 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.ai.supermaven",
     "lazyvim.plugins.extras.coding.yanky",
-    "lazyvim.plugins.extras.editor.inc-rename"
+    "lazyvim.plugins.extras.editor.inc-rename",
+    "lazyvim.plugins.extras.editor.mini-diff"
   ],
   "news": {
     "NEWS.md": "10960"
