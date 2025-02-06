@@ -1,6 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.supermaven"
+    "lazyvim.plugins.extras.ai.supermaven",
+    "lazyvim.plugins.extras.coding.yanky"
   ],
   "news": {
     "NEWS.md": "10960"
