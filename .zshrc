@@ -21,7 +21,7 @@ alias lt='ls --tree --ignore-glob "node_modules"'
 alias vim='nvim'
 alias cat='bat'
 alias top='vtop'
-alias aiwatch='aider --watch-files --model sonnet'
+alias aiwatch='aider --watch-files --sonnet --chat-mode code'
 # Git aliases
 alias g='lazygit'
 alias ga='git add'
