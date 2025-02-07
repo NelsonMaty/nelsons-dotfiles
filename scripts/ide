@@ -1,3 +1,54 @@
 #!/bin/bash
-tmux split-window -v -l 30%
-tmux split-window -h -l 50%
+# Description:
+#   - Uses the current folder name as the session name.
+#   - If a session with that name already exists, simply attach/switch to it.
+#   - Otherwise, creates a new session with:
+#       • A "neovim" window (that starts nvim),
+#       • An "aider" window (running aider, then splitting vertically to run watch-ai),
+#       • And a "terminal" window.
+#   - If run from within a tmux session, it will use "tmux switch-client" to avoid nesting.
+
+# Get the project folder name to use as the session name
+session_name=$(basename "$PWD")
+
+# If a session with the same name already exists, attach to it:
+if tmux has-session -t "$session_name" 2>/dev/null; then
+  if [ -n "$TMUX" ]; then
+    # Already inside a tmux session: switch the client to the target session.
+    tmux switch-client -t "$session_name"
+  else
+    # Not inside tmux: attach normally.
+    tmux attach-session -t "$session_name"
+  fi
+  exit 0
+fi
+
+# Create a new tmux session in detached mode with the first window named "neovim"
+tmux new-session -d -s "$session_name" -c "$PWD" -n neovim
+
+# In the "neovim" window, start nvim
+tmux send-keys -t "$session_name:neovim" "nvim" C-m
+
+# Create a new window named "aider" in the same directory
+tmux new-window -t "$session_name" -c "$PWD" -n aider
+# In the "aider" window, run the 'aider' command
+tmux send-keys -t "$session_name:aider" "aider" C-m
+
+# Split the "aider" window vertically using the same working directory
+tmux split-window -v -t "$session_name:aider" -c "$PWD"
+# In the new pane, run the 'watch-ai' command
+tmux send-keys -t "$session_name:aider.1" "watch-ai" C-m
+
+# Create another new window named "terminal" in the same directory
+tmux new-window -t "$session_name" -c "$PWD" -n terminal
+
+# Go back to the "neovim" window
+tmux select-window -t "$session_name:neovim"
+
+# Attach to the session.
+# If we're already inside tmux, switch the client; otherwise, attach normally.
+if [ -n "$TMUX" ]; then
+  tmux switch-client -t "$session_name"
+else
+  tmux attach-session -t "$session_name"
+fi
