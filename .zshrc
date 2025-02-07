@@ -22,6 +22,7 @@ alias vim='nvim'
 alias cat='bat'
 alias top='vtop'
 alias aiwatch='aider --watch-files --sonnet --chat-mode code'
+alias :q='exit'
 # Git aliases
 alias g='lazygit'
 alias ga='git add'
