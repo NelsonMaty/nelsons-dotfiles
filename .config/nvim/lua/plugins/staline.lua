@@ -16,6 +16,9 @@ return {
           "branch",
         },
       },
+      defaults = {
+        left_separator = "",
+      },
     })
 
     -- Add highlight for recording indicator
