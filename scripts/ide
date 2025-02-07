@@ -24,26 +24,26 @@ if tmux has-session -t "$session_name" 2>/dev/null; then
 fi
 
 # Create a new tmux session in detached mode with the first window named "neovim"
-tmux new-session -d -s "$session_name" -c "$PWD" -n neovim
+tmux new-session -d -s "$session_name" -c "$PWD" -n " neovim"
 
-# In the "neovim" window, start nvim
-tmux send-keys -t "$session_name:neovim" "nvim" C-m
+# In the " neovim" window, start nvim
+tmux send-keys -t "$session_name: neovim" "nvim" C-m
 
-# Create a new window named "aider" in the same directory
-tmux new-window -t "$session_name" -c "$PWD" -n aider
-# In the "aider" window, run the 'aider' command
-tmux send-keys -t "$session_name:aider" "aider" C-m
+# Create a new window named "󱜙 aider" in the same directory
+tmux new-window -t "$session_name" -c "$PWD" -n "󱜙 aider"
+# In the "󱜙 aider" window, run the 'aider' command
+tmux send-keys -t "$session_name:󱜙 aider" "aider" C-m
 
-# Split the "aider" window vertically using the same working directory
-tmux split-window -v -t "$session_name:aider" -c "$PWD"
+# Split the "󱜙 aider" window vertically using the same working directory
+tmux split-window -v -t "$session_name:󱜙 aider" -c "$PWD"
 # In the new pane, run the 'watch-ai' command
-tmux send-keys -t "$session_name:aider.1" "watch-ai" C-m
+tmux send-keys -t "$session_name:󱜙 aider.1" "watch-ai" C-m
 
-# Create another new window named "terminal" in the same directory
-tmux new-window -t "$session_name" -c "$PWD" -n terminal
+# Create another new window named " terminal" in the same directory
+tmux new-window -t "$session_name" -c "$PWD" -n " terminal"
 
-# Go back to the "neovim" window
-tmux select-window -t "$session_name:neovim"
+# Go back to the " neovim" window
+tmux select-window -t "$session_name: neovim"
 
 # Attach to the session.
 # If we're already inside tmux, switch the client; otherwise, attach normally.
