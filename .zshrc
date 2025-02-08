@@ -23,6 +23,8 @@ alias cat='bat'
 alias top='vtop'
 alias watch-ai='aider --watch-files --sonnet --chat-mode code'
 alias :q='exit'
+alias c='clear'
+
 # Git aliases
 alias g='lazygit'
 alias ga='git add'
