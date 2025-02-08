@@ -10,6 +10,13 @@ local normal_mode_keybinds = {
   { "sv", ":vsplit<Return>", { desc = "Split window vertically" } },
   { "x", '"_x', {} },
   { "<C-a>", "gg<S-v>G", { desc = "Select all text in current document" } },
+  {
+    "<leader>tt",
+    function()
+      require("twilight").toggle()
+    end,
+    { desc = "Toggle Twilight" },
+  },
 }
 
 local insert_mode_keybinds = {
