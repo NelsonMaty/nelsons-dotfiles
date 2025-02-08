@@ -37,7 +37,7 @@ tmux send-keys -t "$session_name:󱜙 aider" "aider" C-m
 # Split the "󱜙 aider" window vertically using the same working directory
 tmux split-window -v -t "$session_name:󱜙 aider" -c "$PWD"
 # In the new pane, run the 'watch-ai' command
-tmux send-keys -t "$session_name:󱜙 aider.1" "watch-ai" C-m
+# tmux send-keys -t "$session_name:󱜙 aider.1" "watch-ai" C-m
 
 # Create another new window named " terminal" in the same directory
 tmux new-window -t "$session_name" -c "$PWD" -n " terminal"
