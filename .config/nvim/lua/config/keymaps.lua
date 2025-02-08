@@ -12,9 +12,7 @@ local normal_mode_keybinds = {
   { "<C-a>", "gg<S-v>G", { desc = "Select all text in current document" } },
   {
     "<leader>tt",
-    function()
-      require("twilight").toggle()
-    end,
+    require("twilight").toggle,
     { desc = "Toggle Twilight" },
   },
 }
