@@ -3,15 +3,23 @@
 -- Add any additional keymaps here
 
 local normal_mode_keybinds = {
-  { key = "-", command = require("oil").open, opts = { desc = "Open parent directory" } },
-  { key = "<leader>bD", command = ":%bd|bd#<cr>", opts = { desc = "Close all buffers including current" } },
-  { key = "<leader>sb", command = require("snipe").open_buffer_menu, opts = { desc = "Open Snipe buffer menu" } },
-  { key = "ss", command = ":split<Return>", opts = { desc = "Split window horizontally" } },
-  { key = "sv", command = ":vsplit<Return>", opts = { desc = "Split window vertically" } },
-  { key = "x", command = '"_x', opts = {} },
-  { key = "<C-a>", command = "gg<S-v>G", opts = { desc = "Select all text in current document" } },
+  { "-", require("oil").open, { desc = "Open parent directory" } },
+  { "<leader>bD", ":%bd|bd#<cr>", { desc = "Close all buffers including current" } },
+  { "<leader>sb", require("snipe").open_buffer_menu, { desc = "Open Snipe buffer menu" } },
+  { "ss", ":split<Return>", { desc = "Split window horizontally" } },
+  { "sv", ":vsplit<Return>", { desc = "Split window vertically" } },
+  { "x", '"_x', {} },
+  { "<C-a>", "gg<S-v>G", { desc = "Select all text in current document" } },
+}
+
+local insert_mode_keybinds = {
+  { "jj", "<Esc>", { desc = "Exit insert mode" } },
 }
 
 for _, map in ipairs(normal_mode_keybinds) do
-  vim.keymap.set("n", map.key, map.command, map.opts)
+  vim.keymap.set("n", map[1], map[2], map[3])
+end
+
+for _, map in ipairs(insert_mode_keybinds) do
+  vim.keymap.set("i", map[1], map[2], map[3])
 end
