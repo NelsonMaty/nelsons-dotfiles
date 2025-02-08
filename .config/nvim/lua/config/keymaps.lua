@@ -15,6 +15,7 @@ local normal_mode_keybinds = {
     require("twilight").toggle,
     { desc = "Toggle Twilight" },
   },
+  { "<leader>e", require("mini.files").open, { desc = "Open Mini file explorer" } },
 }
 
 local insert_mode_keybinds = {
