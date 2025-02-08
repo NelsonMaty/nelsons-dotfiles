@@ -15,12 +15,4 @@ return {
     "nvim-lualine/lualine.nvim",
     enabled = false,
   },
-  {
-    "snacks.nvim",
-    opts = {
-      indent = {
-        scope = { enabled = false },
-      },
-    },
-  },
 }
