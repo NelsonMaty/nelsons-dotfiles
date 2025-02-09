@@ -5,7 +5,6 @@
 local normal_mode_keybinds = {
   { "-", require("oil").open, { desc = "Open parent directory" } },
   { "<leader>bD", ":%bd|bd#<cr>", { desc = "Close all buffers including current" } },
-  { "<leader>sb", require("snipe").open_buffer_menu, { desc = "Open Snipe buffer menu" } },
   { "ss", ":split<Return>", { desc = "Split window horizontally" } },
   { "sv", ":vsplit<Return>", { desc = "Split window vertically" } },
   { "x", '"_x', {} },
