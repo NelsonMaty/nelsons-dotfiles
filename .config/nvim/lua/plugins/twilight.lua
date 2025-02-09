@@ -1,4 +1,6 @@
 return {
   "folke/twilight.nvim",
-  opts = {},
+  opts = {
+    context = 8,
+  },
 }
