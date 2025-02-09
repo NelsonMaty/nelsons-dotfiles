@@ -14,7 +14,13 @@ local normal_mode_keybinds = {
     require("twilight").toggle,
     { desc = "Toggle Twilight" },
   },
-  { "<leader>e", require("mini.files").open, { desc = "Open Mini file explorer" } },
+  {
+    "<leader>e",
+    function()
+      require("mini.files").open(vim.api.nvim_buf_get_name(0), false)
+    end,
+    { desc = "Open Mini file explorer" },
+  },
 }
 
 vim.keymap.set("n", "<leader>cp", function()
