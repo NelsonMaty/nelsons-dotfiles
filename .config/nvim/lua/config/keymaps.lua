@@ -18,6 +18,14 @@ local normal_mode_keybinds = {
   { "<leader>e", require("mini.files").open, { desc = "Open Mini file explorer" } },
 }
 
+vim.keymap.set("n", "<leader>cp", function()
+  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+  local file_path = vim.fn.expand("%:p")
+  local relative_path = file_path:sub(#git_root + 2) -- Trim the Git root + '/'
+  vim.fn.setreg("+", relative_path)
+  print("Copied: " .. relative_path)
+end, { silent = true })
+
 local insert_mode_keybinds = {
   { "jj", "<Esc>", { desc = "Exit insert mode" } },
 }
