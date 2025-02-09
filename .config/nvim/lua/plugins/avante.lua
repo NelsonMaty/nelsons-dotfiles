@@ -15,6 +15,9 @@ return {
       max_tokens = 4096,
     },
     windows = {
+      sidebar_header = {
+        enabled = false,
+      },
       width = 50,
     },
     hints = {
