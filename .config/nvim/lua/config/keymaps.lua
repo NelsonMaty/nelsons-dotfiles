@@ -5,8 +5,8 @@
 local normal_mode_keybinds = {
   { "-", require("oil").open, { desc = "Open parent directory" } },
   { "<leader>bD", ":%bd|bd#<cr>", { desc = "Close all buffers including current" } },
-  { "ss", ":split<Return>", { desc = "Split window horizontally" } },
-  { "sv", ":vsplit<Return>", { desc = "Split window vertically" } },
+  { "<leader>ss", ":split<Return>", { desc = "Split window horizontally" } },
+  { "<leader>sv", ":vsplit<Return>", { desc = "Split window vertically" } },
   { "x", '"_x', {} },
   { "<C-a>", "gg<S-v>G", { desc = "Select all text in current document" } },
   {
