@@ -1,5 +1,5 @@
 architect: true
-model: r1
+model: deepseek/deepseek-reasoner
 editor-model: sonnet
 dark-mode: true
 auto-commits: false
